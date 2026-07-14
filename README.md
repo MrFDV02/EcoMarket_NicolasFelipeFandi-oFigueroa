@@ -51,11 +51,15 @@ cd EcoMarket_FandinoNicolas
 ```
 
 ## 📸 Screenshots
+
 ### Desktop
-<!-- Add desktop screenshots here -->
+https://drive.google.com/file/d/1SqB0qz7JLrNt5g437Dz1pXdCktsKbNni/view?usp=sharing
 
 ### Mobile
-<!-- Add mobile screenshots here -->
+https://drive.google.com/file/d/1QLJ43-oPoep6SSnW3YL-BRx5qYtyKQ28/view?usp=sharing
+
+### Deployment:
+https://beamish-elf-eb8128.netlify.app/
 
 ## 👨‍💻 Author
 🦾   →  Nicolás Felipe Fandiño Figueroa
