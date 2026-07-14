@@ -5,139 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store - EcoMarket</title>
-    <!-- Enlazamos los estilos subiendo un nivel en la jerarquía -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <style>
-        /* Estilos específicos para la página de catálogo */
-        .store-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
-            padding: var(--spacing-xl) var(--spacing-lg);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Sidebar de Filtros */
-        .filter-sidebar {
-            background-color: var(--color-white);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius);
-            padding: var(--spacing-md);
-            height: fit-content;
-            position: sticky;
-            top: 90px;
-            /* Para que no se solape con el header sticky */
-        }
-
-        .filter-sidebar__title {
-            font-size: 1.3rem;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-primary-dark);
-            border-bottom: 2px solid var(--color-primary);
-            padding-bottom: var(--spacing-xs);
-        }
-
-        .filter-group {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .filter-group__title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-text);
-        }
-
-        .filter-group__list {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .filter-group__item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            cursor: pointer;
-        }
-
-        .filter-group__item input {
-            accent-color: var(--color-primary);
-            cursor: pointer;
-        }
-
-        /* Grid de Productos */
-        .products-catalog {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .catalog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: var(--spacing-sm);
-        }
-
-        .catalog-header__results {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-        }
-
-        .catalog-header__sort select {
-            padding: 6px 12px;
-            border-radius: var(--radius);
-            border: 1px solid var(--color-border);
-            font-family: var(--font-body);
-            color: var(--color-text);
-            outline: none;
-        }
-
-        /* Grid Responsivo para 20 productos */
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-md);
-        }
-
-        /* Ajustes Responsivos */
-        @media (min-width: 768px) {
-            .catalog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .store-container {
-                grid-template-columns: 280px 1fr;
-            }
-
-            .catalog-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .catalog-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+
     <header class="header">
         <div class="header__logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
@@ -179,14 +55,14 @@
         </div>
     </header>
 
-    <!-- STORE LAYOUT (Sidebar + Grid) -->
+
     <main class="store-container">
 
-        <!-- SIDEBAR DE FILTROS -->
+
         <aside class="filter-sidebar">
             <h2 class="filter-sidebar__title">Filters</h2>
 
-            <!-- Categorías -->
+
             <div class="filter-group">
                 <h3 class="filter-group__title">Categories</h3>
                 <div class="filter-group__list">
@@ -197,7 +73,7 @@
                 </div>
             </div>
 
-            <!-- Rangos de Precio -->
+ 
             <div class="filter-group">
                 <h3 class="filter-group__title">Price Range</h3>
                 <div class="filter-group__list">
@@ -207,7 +83,7 @@
                 </div>
             </div>
 
-            <!-- Atributos Ecológicos -->
+ 
             <div class="filter-group">
                 <h3 class="filter-group__title">Eco Badges</h3>
                 <div class="filter-group__list">
@@ -218,7 +94,7 @@
             </div>
         </aside>
 
-        <!-- SECCIÓN DE PRODUCTOS (Grid de 20 elementos) -->
+
         <section class="products-catalog">
             <div class="catalog-header">
                 <p class="catalog-header__results">Showing 20 sustainable items</p>
@@ -232,22 +108,18 @@
                 </div>
             </div>
 
-            <!-- El Grid con los 20 Productos -->
+
             <div class="catalog-grid">
 
-                <!-- Producto 1 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-bamboo-toothbrush.png" alt="Bamboo Toothbrush Set"
-                            class="card__img">
+                        <img src="../img/products/product-bamboo-toothbrush.png" alt="Bamboo Toothbrush Set" class="card__img">
                         <span class="card__badge card__badge--yellow">Best Seller</span>
-                        <button class="card__fav" aria-label="Favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
-                                fill="none" stroke="#666" stroke-width="16">
-                                <path
-                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
-                            </svg>
-                        </button>
+                        <input type="checkbox" id="fav1" class="card__fav-check">
+                        <label for="fav1" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Bamboo Toothbrush</h3>
@@ -259,18 +131,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 2 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-beeswax-wraps.png" alt="Natural Beeswax Wraps"
-                            class="card__img">
-                        <button class="card__fav" aria-label="Favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
-                                fill="none" stroke="#666" stroke-width="16">
-                                <path
-                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
-                            </svg>
-                        </button>
+                        <img src="../img/products/product-beeswax-wraps.png" alt="Natural Beeswax Wraps" class="card__img">
+                        <input type="checkbox" id="fav2" class="card__fav-check">
+                        <label for="fav2" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Natural Beeswax Wraps</h3>
@@ -282,11 +150,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 3 -->
+   
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-cloth-napkins.png" alt="Organic Cloth Napkins"
-                            class="card__img">
+                        <img src="../img/products/product-cloth-napkins.png" alt="Organic Cloth Napkins" class="card__img">
+                        <input type="checkbox" id="fav3" class="card__fav-check">
+                        <label for="fav3" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Organic Cloth Napkins</h3>
@@ -298,11 +169,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 4 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-coconut-scrubber.png" alt="Coconut Scrubber"
-                            class="card__img">
+                        <img src="../img/products/product-coconut-scrubber.png" alt="Coconut Scrubber" class="card__img">
+                        <input type="checkbox" id="fav4" class="card__fav-check">
+                        <label for="fav4" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Coconut Scrubber</h3>
@@ -314,10 +188,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 5 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-coffee-cup.png" alt="Reusable Coffee Cup" class="card__img">
+                        <input type="checkbox" id="fav5" class="card__fav-check">
+                        <label for="fav5" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Reusable Coffee Cup</h3>
@@ -329,11 +207,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 6 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-compost-bin.png" alt="Countertop Compost Bin"
-                            class="card__img">
+                        <img src="../img/products/product-compost-bin.png" alt="Countertop Compost Bin" class="card__img">
+                        <input type="checkbox" id="fav6" class="card__fav-check">
+                        <label for="fav6" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Countertop Compost Bin</h3>
@@ -345,10 +226,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 7 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-cutlery.png" alt="Wooden Cutlery Set" class="card__img">
+                        <input type="checkbox" id="fav7" class="card__fav-check">
+                        <label for="fav7" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Wooden Cutlery Set</h3>
@@ -360,10 +245,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 8 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-dish-brush.png" alt="Eco Dish Brush" class="card__img">
+                        <input type="checkbox" id="fav8" class="card__fav-check">
+                        <label for="fav8" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Eco Dish Brush</h3>
@@ -375,11 +264,15 @@
                     </div>
                 </article>
 
-                <!-- Producto 9 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-glass-bottle.png" alt="Glass Water Bottle" class="card__img">
                         <span class="card__badge card__badge--blue">BPA Free</span>
+                        <input type="checkbox" id="fav9" class="card__fav-check">
+                        <label for="fav9" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Glass Water Bottle</h3>
@@ -391,10 +284,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 10 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-jute-bag.png" alt="Jute Tote Bag" class="card__img">
+                        <input type="checkbox" id="fav10" class="card__fav-check">
+                        <label for="fav10" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Jute Tote Bag</h3>
@@ -406,10 +303,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 11 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-laundry-balls.png" alt="Wool Laundry Balls" class="card__img">
+                        <input type="checkbox" id="fav11" class="card__fav-check">
+                        <label for="fav11" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Wool Laundry Balls</h3>
@@ -421,11 +322,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 12 -->
+   
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-laundry-detergent.png" alt="Eco Laundry Detergent"
-                            class="card__img">
+                        <img src="../img/products/product-laundry-detergent.png" alt="Eco Laundry Detergent" class="card__img">
+                        <input type="checkbox" id="fav12" class="card__fav-check">
+                        <label for="fav12" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Eco Laundry Detergent</h3>
@@ -437,10 +341,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 13 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-lunchbox.png" alt="Sustainable Lunchbox" class="card__img">
+                        <input type="checkbox" id="fav13" class="card__fav-check">
+                        <label for="fav13" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Sustainable Lunchbox</h3>
@@ -452,10 +360,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 14 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-mesh-bag.png" alt="Cotton Mesh Produce Bag" class="card__img">
+                        <input type="checkbox" id="fav14" class="card__fav-check">
+                        <label for="fav14" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Cotton Mesh Bag</h3>
@@ -467,11 +379,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 15 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-metal-straws.png" alt="Stainless Steel Straws"
-                            class="card__img">
+                        <img src="../img/products/product-metal-straws.png" alt="Stainless Steel Straws" class="card__img">
+                        <input type="checkbox" id="fav15" class="card__fav-check">
+                        <label for="fav15" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Stainless Steel Straws</h3>
@@ -483,10 +398,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 16 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-notebook.png" alt="Eco-Friendly Notebook" class="card__img">
+                        <input type="checkbox" id="fav16" class="card__fav-check">
+                        <label for="fav16" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Eco Notebook</h3>
@@ -498,11 +417,15 @@
                     </div>
                 </article>
 
-                <!-- Producto 17 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-shampoo-bar.png" alt="Citrus Shampoo Bar" class="card__img">
                         <span class="card__badge card__badge--green">Plastic Free</span>
+                        <input type="checkbox" id="fav17" class="card__fav-check">
+                        <label for="fav17" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Citrus Shampoo Bar</h3>
@@ -514,11 +437,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 18 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-silicone-bags.png" alt="Silicone Storage Bags"
-                            class="card__img">
+                        <img src="../img/products/product-silicone-bags.png" alt="Silicone Storage Bags" class="card__img">
+                        <input type="checkbox" id="fav18" class="card__fav-check">
+                        <label for="fav18" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Silicone Storage Bags</h3>
@@ -530,11 +456,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 19 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
-                        <img src="../img/products/product-soap-dispenser.png" alt="Amber Soap Dispenser"
-                            class="card__img">
+                        <img src="../img/products/product-soap-dispenser.png" alt="Amber Soap Dispenser" class="card__img">
+                        <input type="checkbox" id="fav19" class="card__fav-check">
+                        <label for="fav19" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Amber Soap Dispenser</h3>
@@ -546,10 +475,14 @@
                     </div>
                 </article>
 
-                <!-- Producto 20 -->
+
                 <article class="card">
                     <div class="card__img-wrapper">
                         <img src="../img/products/product-sponge.png" alt="Natural Sponge" class="card__img">
+                        <input type="checkbox" id="fav20" class="card__fav-check">
+                        <label for="fav20" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" class="card__fav-icon"><path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z"/></svg>
+                        </label>
                     </div>
                     <div class="card__body">
                         <h3 class="card__name">Natural Sponge</h3>
@@ -562,11 +495,22 @@
                 </article>
 
             </div>
+
+
+            <nav class="pagination" aria-label="Navegación de páginas">
+                <a href="#" class="pagination__btn pagination__btn--prev">&#8592; Anterior</a>
+                <a href="#" class="pagination__page pagination__page--active">1</a>
+                <a href="#" class="pagination__page">2</a>
+                <a href="#" class="pagination__page">3</a>
+                <a href="#" class="pagination__page">4</a>
+                <a href="#" class="pagination__btn pagination__btn--next">Siguiente &#8594;</a>
+            </nav>
+
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+
     <footer class="footer">
         <div class="footer__brand">
             <div class="footer__logo">

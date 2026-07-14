@@ -1,436 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Story - EcoMarket</title>
-  <!-- Enlazamos los estilos subiendo un nivel en la jerarquía -->
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    /* Estilos específicos para la página Sobre Nosotros */
-    .about-hero {
-      background-color: var(--color-primary-dark);
-      color: var(--color-white);
-      padding: var(--spacing-xl) var(--spacing-lg);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing-sm);
-    }
-
-    .about-hero__icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .about-hero__title {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    .about-hero__subtitle {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-
-    /* Sección Historia */
-    .story-section {
-      padding: var(--spacing-xl) var(--spacing-lg);
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-lg);
-      align-items: center;
-    }
-
-    .story-section__content {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
-
-    .story-section__title {
-      font-size: 2rem;
-      color: var(--color-primary-dark);
-    }
-
-    .story-section__img {
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-    }
-
-    /* Sección Principios Ecológicos */
-    .principles-section {
-      background-color: var(--color-earth);
-      padding: var(--spacing-xl) var(--spacing-lg);
-      text-align: center;
-    }
-
-    .principles__title {
-      font-size: 2rem;
-      color: var(--color-primary-dark);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .principles-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-md);
-    }
-
-    .principle-card {
-      background-color: var(--color-white);
-      padding: var(--spacing-md);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .principle-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .principle-card__icon {
-      margin-bottom: var(--spacing-xs);
-      display: inline-block;
-    }
-
-    .principle-card__title {
-      font-size: 1.2rem;
-      margin-bottom: var(--spacing-xs);
-      color: var(--color-primary-dark);
-    }
-
-    .principle-card__desc {
-      font-size: 0.9rem;
-      color: var(--color-text-light);
-    }
-
-    /* Carrusel de Testimonios (Pure CSS Scroll Snap) */
-    .testimonials-section {
-      padding: var(--spacing-xl) var(--spacing-lg);
-      text-align: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .testimonials__title {
-      font-size: 2rem;
-      color: var(--color-primary-dark);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .testimonials__subtitle {
-      color: var(--color-text-light);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    /* Contenedor interactivo */
-    .testimonials-carousel {
-      display: flex;
-      gap: var(--spacing-md);
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: var(--spacing-md);
-      scroll-behavior: smooth;
-      scrollbar-width: thin;
-    }
-
-    .testimonials-carousel::-webkit-scrollbar {
-      height: 6px;
-    }
-    .testimonials-carousel::-webkit-scrollbar-thumb {
-      background-color: var(--color-primary);
-      border-radius: 10px;
-    }
-
-    .testimonial-slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-      background-color: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      padding: var(--spacing-lg) var(--spacing-md);
-      box-shadow: var(--shadow);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--spacing-sm);
-    }
-
-    .testimonial__avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--color-primary-light);
-      box-shadow: var(--shadow);
-    }
-
-    .testimonial__quote {
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--color-text);
-      max-width: 600px;
-      margin: 0;
-    }
-
-    .testimonial__meta {
-      margin-top: var(--spacing-xs);
-    }
-
-    .testimonial__author {
-      font-weight: 700;
-      color: var(--color-primary-dark);
-      margin: 0;
-    }
-
-    .testimonial__role {
-      font-size: 0.8rem;
-      color: var(--color-text-light);
-      margin: 2px 0 0 0;
-    }
-
-    /* Ajustes Responsivos */
-    @media (min-width: 768px) {
-      .story-section {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .principles-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .testimonial-slide {
-        flex: 0 0 calc(50% - var(--spacing-sm));
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .testimonial-slide {
-        flex: 0 0 calc(33.333% - var(--spacing-md));
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header__logo">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
-        <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z"/>
-      </svg>
-      <span>EcoMarket</span>
-    </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li><a href="../index.html" class="header__nav-link">Home</a></li>
-        <li><a href="productos.html" class="header__nav-link">Store</a></li>
-        <li><a href="sobre-nosotros.html" class="header__nav-link">Our Story</a></li>
-        <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="header__actions">
-      <a href="#" class="header__action-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="112" cy="112" r="80"/>
-          <line x1="168.57" y1="168.57" x2="224" y2="224"/>
-        </svg>
-      </a>
-      <a href="#" class="header__action-link header__cart">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l32.51,168.86A24,24,0,1,0,98.4,204H169.6a24,24,0,1,0,20.47-11.14L183,152h23a16,16,0,0,0,15.74-13.14l12-80A8,8,0,0,0,222.14,58.87Z"/>
-        </svg>
-        <span class="header__cart-badge">2</span>
-      </a>
-      <a href="#" class="header__action-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="#2c2c2c">
-          <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,240a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z"/>
-        </svg>
-      </a>
-    </div>
-  </header>
-
-  <!-- MAIN ABOUT CONTENT -->
-  <main>
-    
-    <!-- HERO (Utiliza el icono minimalista SVG en lugar de la imagen) -->
-    <section class="about-hero">
-      <div class="about-hero__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256" fill="#2ecc71">
-          <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z"/>
-        </svg>
-      </div>
-      <h1 class="about-hero__title">Driven by Nature</h1>
-      <p class="about-hero__subtitle">Discover our journey, our commitment to the planet, and why we do what we do every single day.</p>
-    </section>
-
-    <!-- OUR STORY (Usa about-mission.png) -->
-    <section class="story-section">
-      <div class="story-section__content">
-        <h2 class="story-section__title">How It All Started</h2>
-        <p>EcoMarket was born out of a simple observation: finding genuinely plastic-free, highly durable, and ethically manufactured daily goods shouldn't be an exhausting challenge.</p>
-        <p>In 2024, a small team of sustainability advocates came together to build an accessible storefront that does the heavy vetting for you. We partner directly with artisans and eco-certified workshops globally to ensure every product helps build a zero-waste future.</p>
-      </div>
-      <img src="../img/about-mission.png" alt="Our Mission Journey" class="story-section__img">
-    </section>
-
-    <!-- OUR COMMITMENT (Usa about-commitment.png) -->
-    <section class="story-section" style="background-color: var(--color-white);">
-      <img src="../img/about-commitment.png" alt="Our Commitment Packaging" class="story-section__img" style="order: 2;">
-      <div class="story-section__content" style="order: 1;">
-        <h2 class="story-section__title">Our Commitment</h2>
-        <p>We are constantly seeking to reduce our environmental footprint. This is why our partnerships are strictly with carbon-neutral logistics and verified fair-trade suppliers.</p>
-        <p>Every single detail matters to us, from the water-based inks on our packaging labels to the ethical wages of the craftsmen crafting our wooden cutlery and organic cotton bags.</p>
-      </div>
-    </section>
-
-    <!-- GREEN PRINCIPLES -->
-    <section class="principles-section">
-      <h2 class="principles__title">Our Ecological Principles</h2>
-      <div class="principles-grid">
-        
-        <!-- Principio 1 -->
-        <div class="principle-card">
-          <div class="principle-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
-              <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200Z"/>
+    <header class="header">
+        <div class="header__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
+                <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
             </svg>
-          </div>
-          <h3 class="principle-card__title">Zero Waste Packaging</h3>
-          <p class="principle-card__desc">No plastic tape, no plastic bubbles. We pack using compostable cardboard boxes, paper tape, and cornstarch peanuts.</p>
+            <span>EcoMarket</span>
         </div>
-
-        <!-- Principio 2 -->
-        <div class="principle-card">
-          <div class="principle-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
-              <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Z"/>
-            </svg>
-          </div>
-          <h3 class="principle-card__title">Carbon Neutral Shipping</h3>
-          <p class="principle-card__desc">We offset 100% of the carbon emissions generated by our logistics partners through verified reforestation initiatives.</p>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                <li><a href="productos.html" class="header__nav-link">Store</a></li>
+                <li><a href="sobre-nosotros.html" class="header__nav-link">Our Story</a></li>
+                <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <a href="#" class="header__action-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="112" cy="112" r="80" />
+                    <line x1="168.57" y1="168.57" x2="224" y2="224" />
+                </svg>
+            </a>
+            <a href="#" class="header__action-link header__cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l32.51,168.86A24,24,0,1,0,98.4,204H169.6a24,24,0,1,0,20.47-11.14L183,152h23a16,16,0,0,0,15.74-13.14l12-80A8,8,0,0,0,222.14,58.87Z" />
+                </svg>
+                <span class="header__cart-badge">2</span>
+            </a>
+            <a href="#" class="header__action-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="#2c2c2c">
+                    <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,240a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z" />
+                </svg>
+            </a>
         </div>
+    </header>
 
-        <!-- Principio 3 -->
-        <div class="principle-card">
-          <div class="principle-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
-              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z"/>
-            </svg>
-          </div>
-          <h3 class="principle-card__title">Fair Trade & Ethical</h3>
-          <p class="principle-card__desc">We demand fair wages, clean working environments, and strictly verify that no child or forced labor is used at any point.</p>
+    <main>
+
+        <section class="about-hero">
+            <div class="about-hero__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256" fill="#2ecc71">
+                    <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+                </svg>
+            </div>
+            <h1 class="about-hero__title">Driven by Nature</h1>
+            <p class="about-hero__subtitle">Discover our journey, our commitment to the planet, and why we do what we do every single day.</p>
+        </section>
+
+        <section class="story-section">
+            <div class="story-section__content">
+                <h2 class="story-section__title">How It All Started</h2>
+                <p>EcoMarket was born out of a simple observation: finding genuinely plastic-free, highly durable, and ethically manufactured daily goods shouldn't be an exhausting challenge.</p>
+                <p>In 2024, a small team of sustainability advocates came together to build an accessible storefront that does the heavy vetting for you. We partner directly with artisans and eco-certified workshops globally to ensure every product helps build a zero-waste future.</p>
+            </div>
+            <img src="../img/about-mission.png" alt="Our Mission Journey" class="story-section__img">
+        </section>
+
+        <section class="story-section story-section--reverse">
+            <img src="../img/about-commitment.png" alt="Our Commitment Packaging" class="story-section__img">
+            <div class="story-section__content">
+                <h2 class="story-section__title">Our Commitment</h2>
+                <p>We are constantly seeking to reduce our environmental footprint. This is why our partnerships are strictly with carbon-neutral logistics and verified fair-trade suppliers.</p>
+                <p>Every single detail matters to us, from the water-based inks on our packaging labels to the ethical wages of the craftsmen crafting our wooden cutlery and organic cotton bags.</p>
+            </div>
+        </section>
+
+        <section class="principles-section">
+            <h2 class="principles__title">Our Ecological Principles</h2>
+            <div class="principles-grid">
+
+                <div class="principle-card">
+                    <div class="principle-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
+                            <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200Z" />
+                        </svg>
+                    </div>
+                    <h3 class="principle-card__title">Zero Waste Packaging</h3>
+                    <p class="principle-card__desc">No plastic tape, no plastic bubbles. We pack using compostable cardboard boxes, paper tape, and cornstarch peanuts.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
+                            <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Z" />
+                        </svg>
+                    </div>
+                    <h3 class="principle-card__title">Carbon Neutral Shipping</h3>
+                    <p class="principle-card__desc">We offset 100% of the carbon emissions generated by our logistics partners through verified reforestation initiatives.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="#2d6a4f">
+                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" />
+                        </svg>
+                    </div>
+                    <h3 class="principle-card__title">Fair Trade & Ethical</h3>
+                    <p class="principle-card__desc">We demand fair wages, clean working environments, and strictly verify that no child or forced labor is used at any point.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2 class="testimonials__title">Voices of Our Community</h2>
+            <p class="testimonials__subtitle">Swipe or scroll horizontally to see what conscious shoppers say about us.</p>
+
+            <div class="testimonials-carousel">
+
+                <div class="testimonial-slide">
+                    <img src="../img/testimonial-1.png" alt="Sarah Jenkins" class="testimonial__avatar">
+                    <p class="testimonial__quote">"I replaced all my plastic kitchen scrubbers with EcoMarket's coconut scrubbers and natural loofahs. They last twice as long and feel wonderful to use!"</p>
+                    <div class="testimonial__meta">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__author">Sarah Jenkins</p>
+                        <p class="testimonial__role">Verified Purchaser • Green Homeowner</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <img src="../img/testimonial-2.png" alt="David K." class="testimonial__avatar">
+                    <p class="testimonial__quote">"Extremely fast shipping, and true to their word, absolutely zero plastic in the box. The shampoo bar smells amazing and lathers better than bottled versions."</p>
+                    <div class="testimonial__meta">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__author">David K.</p>
+                        <p class="testimonial__role">Verified Purchaser • Zero-Waste Beginner</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <img src="../img/testimonial-3.png" alt="Elena Rostova" class="testimonial__avatar">
+                    <p class="testimonial__quote">"As a restaurant owner, finding sustainable cloth napkins and zero waste kitchen products in bulk was a headache. EcoMarket solved all our sourcing."</p>
+                    <div class="testimonial__meta">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__author">Elena Rostova</p>
+                        <p class="testimonial__role">B2B Customer • Café Greenery</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__brand">
+            <div class="footer__logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="#2ecc71">
+                    <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+                </svg>
+                <span>EcoMarket</span>
+            </div>
+            <p class="footer__desc">Ethical shopping for conscious consumers. We believe in transparency and quality that doesn't cost the earth.</p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
+                <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
+                <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
+            </div>
         </div>
-
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS CAROUSEL (Con tus 3 imágenes reales) -->
-    <section class="testimonials-section">
-      <h2 class="testimonials__title">Voices of Our Community</h2>
-      <p class="testimonials__subtitle">Swipe or scroll horizontally to see what conscious shoppers say about us.</p>
-      
-      <div class="testimonials-carousel">
-        
-        <!-- Testimonio 1 (testimonial-1.png) -->
-        <div class="testimonial-slide">
-          <img src="../img/testimonial-1.png" alt="Sarah Jenkins" class="testimonial__avatar">
-          <p class="testimonial__quote">"I replaced all my plastic kitchen scrubbers with EcoMarket's coconut scrubbers and natural loofahs. They last twice as long and feel wonderful to use!"</p>
-          <div class="testimonial__meta">
-            <p class="testimonial__author">Sarah Jenkins</p>
-            <p class="testimonial__role">Verified Purchaser • Green Homeowner</p>
-          </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Shop</h4>
+            <a href="productos.html" class="footer__link">All Products</a>
+            <a href="#" class="footer__link">New Arrivals</a>
+            <a href="#" class="footer__link">Bamboo Collection</a>
+            <a href="#" class="footer__link">Zero Waste Kits</a>
         </div>
-
-        <!-- Testimonio 2 (testimonial-2.png) -->
-        <div class="testimonial-slide">
-          <img src="../img/testimonial-2.png" alt="David K." class="testimonial__avatar">
-          <p class="testimonial__quote">"Extremely fast shipping, and true to their word, absolutely zero plastic in the box. The shampoo bar smells amazing and lathers better than bottled versions."</p>
-          <div class="testimonial__meta">
-            <p class="testimonial__author">David K.</p>
-            <p class="testimonial__role">Verified Purchaser • Zero-Waste Beginner</p>
-          </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Company</h4>
+            <a href="sobre-nosotros.html" class="footer__link">About Us</a>
+            <a href="#" class="footer__link">Sustainability Promise</a>
+            <a href="contacto.html" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Press</a>
         </div>
-
-        <!-- Testimonio 3 (testimonial-3.png) -->
-        <div class="testimonial-slide">
-          <img src="../img/testimonial-3.png" alt="Elena Rostova" class="testimonial__avatar">
-          <p class="testimonial__quote">"As a restaurant owner, finding sustainable cloth napkins and zero waste kitchen products in bulk was a headache. EcoMarket solved all our sourcing."</p>
-          <div class="testimonial__meta">
-            <p class="testimonial__author">Elena Rostova</p>
-            <p class="testimonial__role">B2B Customer • Café Greenery</p>
-          </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Support</h4>
+            <a href="#" class="footer__link">Help Center</a>
+            <a href="#" class="footer__link">Shipping & Returns</a>
+            <a href="#" class="footer__link">Terms & Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
         </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__brand">
-      <div class="footer__logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="#2ecc71">
-          <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z"/>
-        </svg>
-        <span>EcoMarket</span>
-      </div>
-      <p class="footer__desc">Ethical shopping for conscious consumers. We believe in transparency and quality that doesn't cost the earth.</p>
-      <div class="footer__social">
-        <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
-        <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
-        <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
-      </div>
-    </div>
-    <div class="footer__col">
-      <h4 class="footer__heading">Shop</h4>
-      <a href="productos.html" class="footer__link">All Products</a>
-      <a href="#" class="footer__link">New Arrivals</a>
-      <a href="#" class="footer__link">Bamboo Collection</a>
-      <a href="#" class="footer__link">Zero Waste Kits</a>
-    </div>
-    <div class="footer__col">
-      <h4 class="footer__heading">Company</h4>
-      <a href="sobre-nosotros.html" class="footer__link">About Us</a>
-      <a href="#" class="footer__link">Sustainability Promise</a>
-      <a href="contacto.html" class="footer__link">Contact</a>
-      <a href="#" class="footer__link">Press</a>
-    </div>
-    <div class="footer__col">
-      <h4 class="footer__heading">Support</h4>
-      <a href="#" class="footer__link">Help Center</a>
-      <a href="#" class="footer__link">Shipping & Returns</a>
-      <a href="#" class="footer__link">Terms & Conditions</a>
-      <a href="#" class="footer__link">Privacy Policy</a>
-    </div>
-    <div class="footer__bottom">
-      <p>© 2024 EcoMarket Inc. All rights reserved.</p>
-    </div>
-  </footer>
+        <div class="footer__bottom">
+            <p>© 2024 EcoMarket Inc. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
