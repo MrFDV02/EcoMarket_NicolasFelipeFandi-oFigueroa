@@ -1,11 +1,11 @@
-```bash
+```markdown
 ███████╗ ██████╗ ██████╗ ███╗   ███╗ █████╗ ██████╗ ██╗  ██╗███████╗████████╗
 ██╔════╝██╔════╝██╔═══██╗████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔════╝╚══██╔══╝
 █████╗  ██║     ██║   ██║██╔████╔██║███████║██████╔╝█████╔╝ █████╗     ██║
 ██╔══╝  ██║     ██║   ██║██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██╔══╝     ██║
 ███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗███████╗   ██║
 ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝
-```
+
 
 # 🌿 EcoMarket — Sustainable Products Store
 
@@ -38,12 +38,19 @@ ECOMARKET_FANDINONICOLAS/
 │   └── contacto.html    # Contact page
 ├── index.html           # Home page
 └── README.md
+```
 
 ## 🌱 Pages
-/index.html              →  Home
-/views/productos.html    →  Store
-/views/sobre-nosotros.html  →  Our Story
-/views/contacto.html     →  Contact
+/index.html → Home page.
+
+/views/articulo.html, articulo2.html, articulo3.html, articulo4.html → Independent article views featuring a 2-column CSS Grid layout (70% main content / 30% sticky sidebar), breadcrumbs, drop caps, pull quotes, and related posts.
+
+/views/productos.html → Store catalog.
+
+/views/sobre-nosotros.html → Our Story.
+
+/views/contacto.html → Contact form and details.
+
 
 ## 🚀 How to Run
 ```bash
@@ -66,3 +73,8 @@ https://beamish-elf-eb8128.netlify.app/
 ## 👨‍💻 Author
 🦾   →  Nicolás Felipe Fandiño Figueroa
 GitHub →  @MrFDV02
+
+
+## 📝 new actualizations
+
+/views/blog.html → Main Blog section ("Vida Sostenible") featuring horizontal editorial cards, responsive layout, and custom CSS pagination.
