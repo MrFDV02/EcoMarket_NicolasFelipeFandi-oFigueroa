@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.svg">
+    <title>Store - EcoMarket</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="header__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
+                <path
+                    d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+            </svg>
+            <span>EcoMarket</span>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                <li><a href="productos.html" class="header__nav-link">Store</a></li>
+                <li><a href="sobre-nosotros.html" class="header__nav-link">Our Story</a></li>
+                <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+                <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <a href="#" class="header__action-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none"
+                    stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="112" cy="112" r="80" />
+                    <line x1="168.57" y1="168.57" x2="224" y2="224" />
+                </svg>
+            </a>
+            <a href="#" class="header__action-link header__cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none"
+                    stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l32.51,168.86A24,24,0,1,0,98.4,204H169.6a24,24,0,1,0,20.47-11.14L183,152h23a16,16,0,0,0,15.74-13.14l12-80A8,8,0,0,0,222.14,58.87Z" />
+                </svg>
+                <span class="header__cart-badge">2</span>
+            </a>
+            <a href="#" class="header__action-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="#2c2c2c">
+                    <path
+                        d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,240a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+
+    <main class="store-container">
+
+
+        <aside class="filter-sidebar">
+            <h2 class="filter-sidebar__title">Filters</h2>
+
+
+            <div class="filter-group">
+                <h3 class="filter-group__title">Categories</h3>
+                <div class="filter-group__list">
+                    <label class="filter-group__item"><input type="checkbox"> Personal Care</label>
+                    <label class="filter-group__item"><input type="checkbox"> Kitchen & Dining</label>
+                    <label class="filter-group__item"><input type="checkbox"> Home & Storage</label>
+                    <label class="filter-group__item"><input type="checkbox"> Lifestyle & Travel</label>
+                </div>
+            </div>
+
+
+            <div class="filter-group">
+                <h3 class="filter-group__title">Price Range</h3>
+                <div class="filter-group__list">
+                    <label class="filter-group__item"><input type="radio" name="price"> Under $10.00</label>
+                    <label class="filter-group__item"><input type="radio" name="price"> $10.00 - $20.00</label>
+                    <label class="filter-group__item"><input type="radio" name="price"> Over $20.00</label>
+                </div>
+            </div>
+
+
+            <div class="filter-group">
+                <h3 class="filter-group__title">Eco Badges</h3>
+                <div class="filter-group__list">
+                    <label class="filter-group__item"><input type="checkbox"> Plastic Free</label>
+                    <label class="filter-group__item"><input type="checkbox"> Organic</label>
+                    <label class="filter-group__item"><input type="checkbox"> Reusable</label>
+                </div>
+            </div>
+        </aside>
+
+
+        <section class="products-catalog">
+            <div class="catalog-header">
+                <p class="catalog-header__results">Showing 20 sustainable items</p>
+                <div class="catalog-header__sort">
+                    <label for="sort-select">Sort by: </label>
+                    <select id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="low-high">Price: Low to High</option>
+                        <option value="high-low">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="catalog-grid">
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-bamboo-toothbrush.png" alt="Bamboo Toothbrush Set"
+                            class="card__img">
+                        <span class="card__badge card__badge--yellow">Best Seller</span>
+                        <input type="checkbox" id="fav1" class="card__fav-check">
+                        <label for="fav1" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Bamboo Toothbrush</h3>
+                        <p class="card__desc">Ethically sourced Moso bamboo handles with charcoal bristles.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$12.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-beeswax-wraps.png" alt="Natural Beeswax Wraps"
+                            class="card__img">
+                        <input type="checkbox" id="fav2" class="card__fav-check">
+                        <label for="fav2" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Natural Beeswax Wraps</h3>
+                        <p class="card__desc">A sustainable, washable alternative to plastic wraps.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$15.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-cloth-napkins.png" alt="Organic Cloth Napkins"
+                            class="card__img">
+                        <input type="checkbox" id="fav3" class="card__fav-check">
+                        <label for="fav3" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Organic Cloth Napkins</h3>
+                        <p class="card__desc">Soft and durable reusable linen napkins for green dining.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$14.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-coconut-scrubber.png" alt="Coconut Scrubber"
+                            class="card__img">
+                        <input type="checkbox" id="fav4" class="card__fav-check">
+                        <label for="fav4" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Coconut Scrubber</h3>
+                        <p class="card__desc">Tough on stains, soft on cookware. 100% compostable fiber.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$4.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-coffee-cup.png" alt="Reusable Coffee Cup" class="card__img">
+                        <input type="checkbox" id="fav5" class="card__fav-check">
+                        <label for="fav5" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Reusable Coffee Cup</h3>
+                        <p class="card__desc">Lightweight travel mug crafted from natural plant materials.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$16.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-compost-bin.png" alt="Countertop Compost Bin"
+                            class="card__img">
+                        <input type="checkbox" id="fav6" class="card__fav-check">
+                        <label for="fav6" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Countertop Compost Bin</h3>
+                        <p class="card__desc">Compact kitchen composter with odor-absorbing carbon filter.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$32.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-cutlery.png" alt="Wooden Cutlery Set" class="card__img">
+                        <input type="checkbox" id="fav7" class="card__fav-check">
+                        <label for="fav7" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Wooden Cutlery Set</h3>
+                        <p class="card__desc">Reusable, lightweight travel utensils with canvas storage wrap.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$11.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-dish-brush.png" alt="Eco Dish Brush" class="card__img">
+                        <input type="checkbox" id="fav8" class="card__fav-check">
+                        <label for="fav8" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Eco Dish Brush</h3>
+                        <p class="card__desc">Wooden cleaning brush with strong sisal natural plant bristles.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$7.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-glass-bottle.png" alt="Glass Water Bottle" class="card__img">
+                        <span class="card__badge card__badge--blue">BPA Free</span>
+                        <input type="checkbox" id="fav9" class="card__fav-check">
+                        <label for="fav9" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Glass Water Bottle</h3>
+                        <p class="card__desc">Borosilicate glass wrapped in a premium silicone sleeve.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$24.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-jute-bag.png" alt="Jute Tote Bag" class="card__img">
+                        <input type="checkbox" id="fav10" class="card__fav-check">
+                        <label for="fav10" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Jute Tote Bag</h3>
+                        <p class="card__desc">Robust, highly spacious everyday carry-all made of organic jute.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$13.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-laundry-balls.png" alt="Wool Laundry Balls" class="card__img">
+                        <input type="checkbox" id="fav11" class="card__fav-check">
+                        <label for="fav11" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Wool Laundry Balls</h3>
+                        <p class="card__desc">100% organic wool balls to soften clothes and cut drying times.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$12.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-laundry-detergent.png" alt="Eco Laundry Detergent"
+                            class="card__img">
+                        <input type="checkbox" id="fav12" class="card__fav-check">
+                        <label for="fav12" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Eco Laundry Detergent</h3>
+                        <p class="card__desc">Gentle, concentrated liquid detergent in eco-friendly packaging.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$18.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-lunchbox.png" alt="Sustainable Lunchbox" class="card__img">
+                        <input type="checkbox" id="fav13" class="card__fav-check">
+                        <label for="fav13" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Sustainable Lunchbox</h3>
+                        <p class="card__desc">Leakproof, durable container perfect for zero-waste meals.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$22.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-mesh-bag.png" alt="Cotton Mesh Produce Bag" class="card__img">
+                        <input type="checkbox" id="fav14" class="card__fav-check">
+                        <label for="fav14" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Cotton Mesh Bag</h3>
+                        <p class="card__desc">The perfect lightweight companion for your grocery runs.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$8.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-metal-straws.png" alt="Stainless Steel Straws"
+                            class="card__img">
+                        <input type="checkbox" id="fav15" class="card__fav-check">
+                        <label for="fav15" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Stainless Steel Straws</h3>
+                        <p class="card__desc">Rust-free reusable straws complete with a travel cotton pouch.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$6.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-notebook.png" alt="Eco-Friendly Notebook" class="card__img">
+                        <input type="checkbox" id="fav16" class="card__fav-check">
+                        <label for="fav16" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Eco Notebook</h3>
+                        <p class="card__desc">Ruled pages made entirely of post-consumer recycled paper.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$9.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-shampoo-bar.png" alt="Citrus Shampoo Bar" class="card__img">
+                        <span class="card__badge card__badge--green">Plastic Free</span>
+                        <input type="checkbox" id="fav17" class="card__fav-check">
+                        <label for="fav17" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Citrus Shampoo Bar</h3>
+                        <p class="card__desc">Concentrated shampoo bar with pure essential citrus oils.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$14.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-silicone-bags.png" alt="Silicone Storage Bags"
+                            class="card__img">
+                        <input type="checkbox" id="fav18" class="card__fav-check">
+                        <label for="fav18" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Silicone Storage Bags</h3>
+                        <p class="card__desc">Airtight food-grade silicone pinch bags, freezer and boil safe.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$24.50</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-soap-dispenser.png" alt="Amber Soap Dispenser"
+                            class="card__img">
+                        <input type="checkbox" id="fav19" class="card__fav-check">
+                        <label for="fav19" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Amber Soap Dispenser</h3>
+                        <p class="card__desc">Refillable amber glass bottle with a clean steel pump head.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$15.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card__img-wrapper">
+                        <img src="../img/products/product-sponge.png" alt="Natural Sponge" class="card__img">
+                        <input type="checkbox" id="fav20" class="card__fav-check">
+                        <label for="fav20" class="card__fav" aria-label="Favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"
+                                class="card__fav-icon">
+                                <path
+                                    d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">Natural Sponge</h3>
+                        <p class="card__desc">Soft and absorbent organic sponge harvested from plant fiber.</p>
+                        <div class="card__footer">
+                            <span class="card__price">$5.00</span>
+                            <button class="btn btn--cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <nav class="pagination" aria-label="Navegación de páginas">
+                <a href="#" class="pagination__btn pagination__btn--prev">&#8592; Anterior</a>
+                <a href="#" class="pagination__page pagination__page--active">1</a>
+                <a href="#" class="pagination__page">2</a>
+                <a href="#" class="pagination__page">3</a>
+                <a href="#" class="pagination__page">4</a>
+                <a href="#" class="pagination__btn pagination__btn--next">Siguiente &#8594;</a>
+            </nav>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer__brand">
+            <div class="footer__logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="#2ecc71">
+                    <path
+                        d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+                </svg>
+                <span>EcoMarket</span>
+            </div>
+            <p class="footer__desc">Ethical shopping for conscious consumers. We believe in transparency and quality
+                that doesn't cost the earth.</p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="none"
+                        stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="32" y="32" width="192" height="192" rx="48" />
+                        <circle cx="128" cy="128" r="40" />
+                        <circle cx="180" cy="76" r="10" fill="currentColor" stroke="none" />
+                    </svg>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256"
+                        fill="currentColor">
+                        <path
+                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h16a8,8,0,0,0,0-16H136V120a8,8,0,0,1,8-8h16a8,8,0,0,0,0-16H144a24,24,0,0,0-24,24v16H104a8,8,0,0,0,0,16h16v63.63a88,88,0,1,1,16,0Z" />
+                    </svg>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256"
+                        fill="currentColor">
+                        <path
+                            d="M214.75,211.71l-62.6-98.36,61.77-67.95a8,8,0,0,0-11.84-10.76l-58.52,64.35L99.33,44.29A8,8,0,0,0,92.23,40H48a8,8,0,0,0-6.75,12.29l62.6,98.36L41.08,218.6a8,8,0,1,0,11.84,10.76l58.52-64.35,56.23,88.35A8,8,0,0,0,174.67,256H216a8,8,0,0,0,6.75-12.29Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Shop</h4>
+            <a href="productos.html" class="footer__link">All Products</a>
+            <a href="#" class="footer__link">New Arrivals</a>
+            <a href="#" class="footer__link">Bamboo Collection</a>
+            <a href="#" class="footer__link">Zero Waste Kits</a>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Company</h4>
+            <a href="sobre-nosotros.html" class="footer__link">About Us</a>
+            <a href="#" class="footer__link">Sustainability Promise</a>
+            <a href="contacto.html" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Press</a>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Support</h4>
+            <a href="#" class="footer__link">Help Center</a>
+            <a href="#" class="footer__link">Shipping & Returns</a>
+            <a href="#" class="footer__link">Terms & Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2024 EcoMarket Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

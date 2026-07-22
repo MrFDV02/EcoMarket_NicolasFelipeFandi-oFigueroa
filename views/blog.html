@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.svg">
+  <title>Blog | EcoMarket</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
+        <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+      </svg>
+      <span>EcoMarket</span>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="../index.html" class="header__nav-link">Home</a></li>
+        <li><a href="productos.html" class="header__nav-link">Store</a></li>
+        <li><a href="sobre-nosotros.html" class="header__nav-link">Our Story</a></li>
+        <li><a href="blog.html" class="header__nav-link active">Blog</a></li>
+        <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__action-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="112" cy="112" r="80" />
+          <line x1="168.57" y1="168.57" x2="224" y2="224" />
+        </svg>
+      </a>
+      <a href="#" class="header__action-link header__cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l32.51,168.86A24,24,0,1,0,98.4,204H169.6a24,24,0,1,0,20.47-11.14L183,152h23a16,16,0,0,0,15.74-13.14l12-80A8,8,0,0,0,222.14,58.87Z" />
+        </svg>
+        <span class="header__cart-badge">2</span>
+      </a>
+      <a href="#" class="header__action-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="#2c2c2c">
+          <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,240a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="blog-main">
+    <section class="blog-hero">
+      <div class="blog-hero__content">
+        <span class="category-badge">NUESTRO BLOG</span>
+        <h1>Ideas, guías y estilo de vida consciente</h1>
+        <p>Aprende cómo pequeñas decisiones cotidianas pueden transformar tu entorno y construir un futuro verdaderamente sostenible.</p>
+      </div>
+    </section>
+
+    <section class="blog-grid-container">
+      <div class="blog-grid">
+        
+        <!-- Artículo 1 -->
+        <article class="blog-card">
+          <a href="articulo.html" class="blog-card__image-link">
+            <img src="../img/blog/blog-habitos-eco.jpg" alt="10 hábitos sostenibles">
+          </a>
+          <div class="blog-card__content">
+            <span class="category-badge">CONSEJOS</span>
+            <h2><a href="articulo.html">10 hábitos sostenibles que puedes adoptar hoy para reducir tu huella ambiental</a></h2>
+            <p>Pequeñas acciones diarias generan grandes cambios. Descubre prácticas sencillas para empezar hoy mismo a cuidar el planeta.</p>
+            <div class="blog-card__meta">
+              <span>Laura Verde</span> &bull; <time datetime="2024-05-15">15 May 2024</time>
+            </div>
+            <a href="articulo.html" class="btn btn--secondary blog-card__btn">Leer más</a>
+          </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="blog-card">
+          <a href="articulo2.html" class="blog-card__image-link">
+            <img src="../img/blog/moda-hero.jpg" alt="Moda sostenible">
+          </a>
+          <div class="blog-card__content">
+            <span class="category-badge">MODA</span>
+            <h2><a href="articulo2.html">Guía de moda sostenible: Cómo construir un armario cápsula ecológico</a></h2>
+            <p>Di adiós al consumo rápido. Aprende a elegir prendas duraderas, de calidad y con procesos de fabricación éticos.</p>
+            <div class="blog-card__meta">
+              <span>Carlos M.</span> &bull; <time datetime="2024-05-10">10 May 2024</time>
+            </div>
+            <a href="articulo2.html" class="btn btn--secondary blog-card__btn">Leer más</a>
+          </div>
+        </article>
+
+        <!-- Artículo 3 -->
+        <article class="blog-card">
+          <a href="articulo3.html" class="blog-card__image-link">
+            <img src="../img/blog/jardin-hero.jpg" alt="Jardinería urbana">
+          </a>
+          <div class="blog-card__content">
+            <span class="category-badge">HOGAR</span>
+            <h2><a href="articulo3.html">Jardinería urbana en espacios pequeños: Cultiva tus propias hierbas</a></h2>
+            <p>No necesitas un patio grande para conectar con la naturaleza. Crea tu propio rincón verde y aromático en el balcón de casa.</p>
+            <div class="blog-card__meta">
+              <span>Sofía Gómez</span> &bull; <time datetime="2024-05-02">2 May 2024</time>
+            </div>
+            <a href="articulo3.html" class="btn btn--secondary blog-card__btn">Leer más</a>
+          </div>
+        </article>
+
+        <!-- Artículo 4 -->
+        <article class="blog-card">
+          <a href="articulo4.html" class="blog-card__image-link">
+            <img src="../img/blog/cosmetica-hero.jpg" alt="Cosmética natural">
+          </a>
+          <div class="blog-card__content">
+            <span class="category-badge">BIENESTAR</span>
+            <h2><a href="articulo4.html">Cosmética sólida y natural: Libérate de los envases plásticos en tu baño</a></h2>
+            <p>Descubre los beneficios de los champús sólidos y jabones naturales para cuidar tu piel sin contaminar el agua.</p>
+            <div class="blog-card__meta">
+              <span>Cristina Verde</span> &bull; <time datetime="2024-04-28">28 Abr 2024</time>
+            </div>
+            <a href="articulo4.html" class="btn btn--secondary blog-card__btn">Leer más</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="#2ecc71">
+          <path d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+        </svg>
+        <span>EcoMarket</span>
+      </div>
+      <p class="footer__desc">Ethical shopping for conscious consumers. We believe in transparency and quality that doesn't cost the earth.</p>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__heading">Shop</h4>
+      <a href="productos.html" class="footer__link">All Products</a>
+      <a href="#" class="footer__link">New Arrivals</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__heading">Company</h4>
+      <a href="sobre-nosotros.html" class="footer__link">About Us</a>
+      <a href="contacto.html" class="footer__link">Contact</a>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 EcoMarket Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

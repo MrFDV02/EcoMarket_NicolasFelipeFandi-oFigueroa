@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.svg">
+  <title>EcoMarket</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+
+
+  <header class="header">
+    <div class="header__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="#27ae60">
+        <path
+          d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+      </svg>
+      <span>EcoMarket</span>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="views/productos.html" class="header__nav-link">Store</a></li>
+        <li><a href="views/sobre-nosotros.html" class="header__nav-link">Our Story</a></li>
+        <li><a href="views/blog.html" class="header__nav-link">Blog</a></li>
+        <li><a href="views/contacto.html" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__action-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none"
+          stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="112" cy="112" r="80" />
+          <line x1="168.57" y1="168.57" x2="224" y2="224" />
+        </svg>
+      </a>
+      <a href="#" class="header__action-link header__cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="none"
+          stroke="#2c2c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l32.51,168.86A24,24,0,1,0,98.4,204H169.6a24,24,0,1,0,20.47-11.14L183,152h23a16,16,0,0,0,15.74-13.14l12-80A8,8,0,0,0,222.14,58.87Z" />
+        </svg>
+        <span class="header__cart-badge">2</span>
+      </a>
+      <a href="#" class="header__action-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="#2c2c2c">
+          <path
+            d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,240a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+
+
+  <section class="hero">
+    <img src="img/hero/hero-leaves.jpg" alt="EcoMarket Hero" class="hero__img">
+    <div class="hero__content">
+      <span class="hero__tag">New Collection 2026</span>
+      <h1 class="hero__title">Nature in Every<br><em>Purchase</em></h1>
+      <p class="hero__subtitle">Sustainable goods for a better tomorrow. Ethically sourced, zero-waste packaging, and
+        designed to last a lifetime.</p>
+      <div class="hero__btns">
+        <a href="views/productos.html" class="btn btn--primary">Shop New Arrivals</a>
+        <a href="views/sobre-nosotros.html" class="btn btn--dark">Learn Our Impact</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="featured">
+    <div class="featured__header">
+      <div>
+        <h2 class="featured__title">Featured Finds</h2>
+        <p class="featured__subtitle">Handpicked eco-friendly essentials for you.</p>
+      </div>
+      <a href="views/productos.html" class="featured__link">View All Products →</a>
+    </div>
+    <div class="featured__grid">
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-bamboo-toothbrush.png" alt="Bamboo Toothbrush" class="card__img">
+          <span class="card__badge card__badge--yellow">Best Seller</span>
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Bamboo Toothbrush Set</h3>
+          <p class="card__desc">Ethically sourced Moso bamboo handles with charcoal-infused bristles. 100% compostable.
+          </p>
+          <div class="card__footer">
+            <span class="card__price">$12.00</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-mesh-bag.png" alt="Cotton Mesh Produce Bag" class="card__img">
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Cotton Mesh Produce Bag</h3>
+          <p class="card__desc">The perfect plastic-free companion for your grocery runs.</p>
+          <div class="card__footer">
+            <span class="card__price">$8.50</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-glass-bottle.png" alt="Glass Water Bottle" class="card__img">
+          <span class="card__badge card__badge--blue">BPA Free</span>
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Glass Water Bottle</h3>
+          <p class="card__desc">Durable borosilicate glass with a protective silicone sleeve. Stay hydrated, stay green.
+          </p>
+          <div class="card__footer">
+            <span class="card__price">$24.00</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-beeswax-wraps.png" alt="Natural Beeswax Wraps" class="card__img">
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Natural Beeswax Wraps</h3>
+          <p class="card__desc">A sustainable alternative to plastic wrap. Washable, reusable, and compostable.</p>
+          <div class="card__footer">
+            <span class="card__price">$15.00</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-shampoo-bar.png" alt="Citrus Shampoo Bar" class="card__img">
+          <span class="card__badge card__badge--green">Plastic Free</span>
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Citrus Shampoo Bar</h3>
+          <p class="card__desc">Concentrated shampoo bar made with essential oils. Lasts up to 80 washes.</p>
+          <div class="card__footer">
+            <span class="card__price">$14.00</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img-wrapper">
+          <img src="img/products/product-silicone-bags.png" alt="Silicone Storage Set" class="card__img">
+          <button class="card__fav" aria-label="Favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none"
+              stroke="#666" stroke-width="16">
+              <path d="M128,224S24,168,24,102a54,54,0,0,1,104-20.48A54,54,0,0,1,232,102C232,168,128,224,128,224Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Silicone Storage Set</h3>
+          <p class="card__desc">Leakproof, reusable silicone bags to replace single-use plastic. Freezer safe.</p>
+          <div class="card__footer">
+            <span class="card__price">$24.50</span>
+            <a href="#" class="btn btn--cart">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+
+  <section class="join">
+    <div class="join__content">
+      <h2 class="join__title">Join the Movement</h2>
+      <p class="join__desc">Sign up for our newsletter to get eco-tips, new product alerts, and exclusive discounts.
+        Let's make the planet greener, together.</p>
+      <div class="join__form">
+        <input type="email" class="join__input" placeholder="Enter your email">
+        <button class="btn btn--subscribe">Subscribe</button>
+      </div>
+      <p class="join__note">No spam, just green goodness.</p>
+    </div>
+    <div class="join__img-wrapper">
+      <img src="img/hero/banner-leaves.jpg" alt="Join the Movement" class="join__img">
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="#2ecc71">
+          <path
+            d="M222.14,59.21A8,8,0,0,0,215,52C171.77,52,138.72,65.34,116,91.17c-16.23-4.93-52-9.45-99.08,21.23a8,8,0,0,0-.67,12.63C32.48,139.46,50.68,152,72,152a72.07,72.07,0,0,0,8-.45V184a8,8,0,0,0,13.66,5.66l14.84-14.85A95.27,95.27,0,0,0,160,176c56,0,96-48,96-112A8,8,0,0,0,222.14,59.21Z" />
+        </svg>
+        <span>EcoMarket</span>
+      </div>
+      <p class="footer__desc">Ethical shopping for conscious consumers. We believe in transparency and quality that
+        doesn't cost the earth.</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="none"
+            stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="32" y="32" width="192" height="192" rx="48" />
+            <circle cx="128" cy="128" r="40" />
+            <circle cx="180" cy="76" r="10" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor">
+            <path
+              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h16a8,8,0,0,0,0-16H136V120a8,8,0,0,1,8-8h16a8,8,0,0,0,0-16H144a24,24,0,0,0-24,24v16H104a8,8,0,0,0,0,16h16v63.63a88,88,0,1,1,16,0Z" />
+          </svg>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor">
+            <path
+              d="M214.75,211.71l-62.6-98.36,61.77-67.95a8,8,0,0,0-11.84-10.76l-58.52,64.35L99.33,44.29A8,8,0,0,0,92.23,40H48a8,8,0,0,0-6.75,12.29l62.6,98.36L41.08,218.6a8,8,0,1,0,11.84,10.76l58.52-64.35,56.23,88.35A8,8,0,0,0,174.67,256H216a8,8,0,0,0,6.75-12.29Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__heading">Shop</h4>
+      <a href="views/productos.html" class="footer__link">All Products</a>
+      <a href="#" class="footer__link">New Arrivals</a>
+      <a href="#" class="footer__link">Bamboo Collection</a>
+      <a href="#" class="footer__link">Zero Waste Kits</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__heading">Company</h4>
+      <a href="views/sobre-nosotros.html" class="footer__link">About Us</a>
+      <a href="#" class="footer__link">Sustainability Promise</a>
+      <a href="views/contacto.html" class="footer__link">Contact</a>
+      <a href="#" class="footer__link">Press</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__heading">Support</h4>
+      <a href="#" class="footer__link">Help Center</a>
+      <a href="#" class="footer__link">Shipping & Returns</a>
+      <a href="#" class="footer__link">Terms & Conditions</a>
+      <a href="#" class="footer__link">Privacy Policy</a>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 EcoMarket Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

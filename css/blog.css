@@ -1,0 +1,125 @@
+.blog-main {
+  padding-bottom: 4rem;
+}
+
+.blog-hero {
+  background-color: #f4f6f4;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blog-hero__content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-hero h1 {
+  font-size: 2.5rem;
+  color: #2c2c2c;
+  margin: 0.5rem 0 1rem;
+}
+
+.blog-hero p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.blog-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.blog-card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card__image-link {
+  display: block;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-card__image-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-card__image-link img {
+  transform: scale(1.05);
+}
+
+.blog-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card__content .category-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blog-card__content h2 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card__content h2 a {
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-card__content h2 a:hover {
+  color: #27ae60;
+}
+
+.blog-card__content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.blog-card__meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.blog-card__btn {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
